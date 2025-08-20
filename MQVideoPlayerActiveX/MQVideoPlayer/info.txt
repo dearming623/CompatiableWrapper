@@ -1,0 +1,3 @@
+﻿MQVideoPlayer v1.01
+1. 一个播放器组件。
+

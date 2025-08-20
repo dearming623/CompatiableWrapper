@@ -1,0 +1,2 @@
+﻿DearMing.Common是一个通用工具库
+现在封装NLog的功能

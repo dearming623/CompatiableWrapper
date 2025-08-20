@@ -1,0 +1,32 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 10.00
+# Visual Studio 2008
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQPosTools", "MQPosTools\MQPosTools.csproj", "{392D6AF7-5C5F-46E9-852C-6BC4FDD815D0}"
+EndProject
+Project("{54435603-DBB4-11D2-8724-00A0C9A8B90C}") = "MQPosToolsSetup", "MQPosToolsSetup\MQPosToolsSetup.vdproj", "{184411F3-3547-4AB1-81F2-6F9892E7828E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MQPosToolsTester", "MQPosToolsTester\MQPosToolsTester.csproj", "{2C904791-CC79-444F-BA76-39F92D131336}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{392D6AF7-5C5F-46E9-852C-6BC4FDD815D0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{392D6AF7-5C5F-46E9-852C-6BC4FDD815D0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{392D6AF7-5C5F-46E9-852C-6BC4FDD815D0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{392D6AF7-5C5F-46E9-852C-6BC4FDD815D0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{184411F3-3547-4AB1-81F2-6F9892E7828E}.Debug|Any CPU.ActiveCfg = Debug
+		{184411F3-3547-4AB1-81F2-6F9892E7828E}.Debug|Any CPU.Build.0 = Debug
+		{184411F3-3547-4AB1-81F2-6F9892E7828E}.Release|Any CPU.ActiveCfg = Release
+		{184411F3-3547-4AB1-81F2-6F9892E7828E}.Release|Any CPU.Build.0 = Release
+		{2C904791-CC79-444F-BA76-39F92D131336}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2C904791-CC79-444F-BA76-39F92D131336}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2C904791-CC79-444F-BA76-39F92D131336}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2C904791-CC79-444F-BA76-39F92D131336}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

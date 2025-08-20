@@ -1,0 +1,153 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{392D6AF7-5C5F-46E9-852C-6BC4FDD815D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MQOfficeTools</RootNamespace>
+    <AssemblyName>MQOfficeTools</AssemblyName>
+    <TargetFrameworkVersion>v2.0</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>MQOfficeTools.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <PlatformTarget>x86</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Office.Interop.Excel, Version=12.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c" />
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL" />
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="ActiveXCtrlHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Common\Bean\BaseObject.cs" />
+    <Compile Include="Common\Bean\Result.cs" />
+    <Compile Include="Common\Util\EncodingDetector.cs" />
+    <Compile Include="Common\Util\FileHelper.cs" />
+    <Compile Include="Common\Util\FileUtil.cs" />
+    <Compile Include="Common\Util\HttpUtil.cs" />
+    <Compile Include="Common\Util\TxtFileEncoder.cs" />
+    <Compile Include="Common\Util\ValidationUtil.cs" />
+    <Compile Include="Common\Web\IFileCnvtCallback.cs" />
+    <Compile Include="Common\Web\IHttpCallback.cs" />
+    <Compile Include="Common\Util\Win32API.cs" />
+    <Compile Include="Common\Util\Logger.cs" />
+    <Compile Include="Models\AllProducts.cs" />
+    <Compile Include="Models\ImageParameter.cs" />
+    <Compile Include="Models\MQCentralItem.cs" />
+    <Compile Include="Models\Product.cs" />
+    <Compile Include="Models\Products.cs" />
+    <Compile Include="Models\Request.cs" />
+    <Compile Include="Models\Response.cs" />
+    <Compile Include="Models\XMLRoot.cs" />
+    <Compile Include="ProcessingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ProcessingForm.Designer.cs">
+      <DependentUpon>ProcessingForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Tools.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="Tools.Designer.cs">
+      <DependentUpon>Tools.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Utils\CodePage.cs" />
+    <Compile Include="Utils\Utility.cs" />
+    <Compile Include="Utils\WebServiceHelper.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="MQOfficeTools.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="ProcessingForm.resx">
+      <DependentUpon>ProcessingForm.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Tools.resx">
+      <DependentUpon>Tools.cs</DependentUpon>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="MQOfficeTools_Registe.bat" />
+    <None Include="MQOfficeTools_unRegiste.bat" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="info.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="libs\Newtonsoft.Json.dll" />
+    <Content Include="MQOfficeControl.rc" />
+    <Content Include="logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\..\MQPosToolsActiveX\MQQRCodeLib\MoleQ.QRCode.csproj">
+      <Project>{69CD8227-B5A5-439A-83C7-2D8D933B58FF}</Project>
+      <Name>MoleQ.QRCode</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>@echo.
+IF EXIST "$(DevEnvDir)..\..\..\Microsoft SDKs\Windows\v6.0A\bin\rc.exe" ("$(DevEnvDir)..\..\..\Microsoft SDKs\Windows\v6.0A\bin\rc.exe" /r "$(ProjectDir)MQOfficeControl.rc") ELSE (IF EXIST "$(DevEnvDir)..\..\SDK\v2.0\Bin\rc.exe" ("$(DevEnvDir)..\..\SDK\v2.0\Bin\rc.exe" /r "$(ProjectDir)MQOfficeControl.rc") ELSE (IF EXIST "$(DevEnvDir)..\Tools\Bin\rc.exe" ("$(DevEnvDir)..\Tools\Bin\rc.exe" /r "$(ProjectDir)MQOfficeControl.rc") ELSE (IF EXIST "$(DevEnvDir)..\..\VC\Bin\rc.exe" ("$(DevEnvDir)..\..\VC\Bin\rc.exe" /r "$(ProjectDir)MQOfficeControl.rc") ELSE (IF EXIST "C:\Program Files (x86)\microsoft sdks\windows\v6.0A\bin\rc.exe" ("c:\Program Files (x86)\microsoft sdks\windows\v6.0A\bin\rc.exe" /r "$(ProjectDir)MQOfficeControl.rc") ELSE (IF EXIST "C:\Program Files\microsoft sdks\windows\v6.0A\bin\rc.exe" ("c:\Program Files\microsoft sdks\windows\v6.0A\bin\rc.exe" /r "$(ProjectDir)MQOfficeControl.rc") ELSE (@Echo Unable to find rc.exe, using default manifest instead))))))
+@echo.
+</PreBuildEvent>
+  </PropertyGroup>
+</Project>

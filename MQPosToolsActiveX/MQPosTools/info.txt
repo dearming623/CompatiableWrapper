@@ -1,0 +1,6 @@
+MQPosTools Wrapper v1.02 ( 2023-10-16 )
+1. 增加 GenerateQRCode 函数提供调用
+
+MQPosTools Wrapper v1.01
+1. 增加 loyalty point api 
+2. 增加 get signature image

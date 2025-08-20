@@ -1,0 +1,34 @@
+MQWebApi v1.08
+1. 增加监听消息的功能
+
+MQWebApi v1.07
+1. 增加TSL安全支持
+2. 调整记录返回数据逻辑，在POST之前删除数据库记录
+
+MQWebApi v1.06
+1. 增加SetConfig方法,传递参数内容如何
+<WrapperConfig>
+    <CharSet>ISO-8859-1</CharSet> <!-- null able , tag可以不填 -->  
+    <Dsn>market</Dsn>     <!-- not null or empty -->     
+    <Uid>adm0</Uid>       <!-- not null or empty -->  
+    <Pwd>systemcom</Pwd>  <!-- not null or empty -->  
+    <Stn>999</Stn>        <!-- not null or empty -->  
+</WrapperConfig>
+
+MQWebApi v1.0.0.5
+1. 支持UploadFile,DownloadFile
+2. 增加EnableLogger方法进行开启关闭，用于调试使用
+
+MQWebApi v1.0.0.4
+1. logo资源图片引用改为直接使用导入本地方式
+2. 编译目标平台从x86修改为any cpu
+3. mainfest配置修改为MQPostTools一样
+
+MQWebApi v1.0.0.3
+1. 增加一个带Timeout方法，名为OnPost2(url,body,timeout)
+
+MQWebApi v1.0.0.2
+1. 移除请求中的timeout
+
+MQWebApi v1.0.0.1
+1. 实现调用web api接口，发送json内容

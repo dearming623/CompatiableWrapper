@@ -1,0 +1,17 @@
+MQPLUAIWrapper v1.0.0.2
+1. 升级WmAceKG-x86.dll v1.0.10.2
+2. 增加多次访问Identify和Learn出现问题
+
+MQPLUAIWrapper v1.0.0.1
+1. Added Identify and Learn function.
+2. put dlls in the project directory
+HPSocket_U.dll
+libcrypto-1_1.dll
+libssl-1_1.dll
+opencv_world411.dll
+wm-libcurl.dll
+wm-sqlite3.dll
+WmAceKG-x86.dll v1.0.10.1
+3. put "dev.ini" and "coordinate.json" file execution in the project directory
+
+

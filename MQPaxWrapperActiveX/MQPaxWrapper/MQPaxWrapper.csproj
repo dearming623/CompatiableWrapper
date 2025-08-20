@@ -1,0 +1,167 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="3.5" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{392D6AF7-5C5F-46E9-852C-6BC4FDD815D0}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>MQPaxWrapper</RootNamespace>
+    <AssemblyName>MQPaxWrapper</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SignAssembly>true</SignAssembly>
+    <DelaySign>false</DelaySign>
+    <AssemblyOriginatorKeyFile>MQPaxWrapper.snk</AssemblyOriginatorKeyFile>
+    <TargetFrameworkSubset>
+    </TargetFrameworkSubset>
+    <ApplicationIcon>
+    </ApplicationIcon>
+    <ApplicationManifest>app.manifest</ApplicationManifest>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <RegisterForComInterop>true</RegisterForComInterop>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisUseTypeNameInSuppression>true</CodeAnalysisUseTypeNameInSuppression>
+    <CodeAnalysisModuleSuppressionsFile>GlobalSuppressions.cs</CodeAnalysisModuleSuppressionsFile>
+    <ErrorReport>prompt</ErrorReport>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="POSLink, Version=1.0.8704.21644, Culture=neutral, PublicKeyToken=f3876d2e4b7eb819, processorArchitecture=x86" />
+    <Reference Include="System" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="CommWrapper.cs" />
+    <Compile Include="Exceptions\ActionTimeoutExcepiton.cs" />
+    <Compile Include="ActiveXCtrlHelper.cs">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Exceptions\FailProcessException.cs" />
+    <Compile Include="Exceptions\InterruptProcessException.cs" />
+    <Compile Include="Exceptions\NullResponseException.cs" />
+    <Compile Include="Model\ThreadParam.cs" />
+    <Compile Include="PosLinkEngine.cs" />
+    <Compile Include="Util\Logger.cs" />
+    <Compile Include="Model\ResultCode.cs" />
+    <Compile Include="Util\PaxResponseUtil.cs" />
+    <Compile Include="Controller\QueryReportController.cs" />
+    <Compile Include="Util\StringUtils.cs" />
+    <Compile Include="PosLinkWrapper.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="PosLinkWrapper.Designer.cs">
+      <DependentUpon>PosLinkWrapper.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Model\CommResponse.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="PosLinkWrapper.resx">
+      <DependentUpon>PosLinkWrapper.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="app.manifest" />
+    <None Include="Libs\x64\POSLink.tlb" />
+    <None Include="MQPaxWrapper.snk" />
+    <None Include="MQPaxWrapper_Register.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+    <None Include="MQPaxWrapper_unRegister.bat">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Libs\x64\msvcm90.dll" />
+    <Content Include="Libs\x64\msvcp90.dll" />
+    <Content Include="Libs\x64\msvcr90.dll" />
+    <Content Include="Libs\x64\POSLink.dll" />
+    <Content Include="Libs\x86\msvcm90.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\x86\msvcp90.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\x86\msvcr90.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Libs\x86\POSLink.dll" />
+    <Content Include="dsiPAXControl.rc" />
+    <Content Include="info.txt">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="logo.bmp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DearMing.Common\DearMing.Common.csproj">
+      <Project>{A8E6B073-0ADF-4F48-9064-88504E4862B4}</Project>
+      <Name>DearMing.Common</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <PropertyGroup>
+    <PreBuildEvent>@echo.
+IF EXIST "$(DevEnvDir)..\..\..\Microsoft SDKs\Windows\v6.0A\bin\rc.exe" ("$(DevEnvDir)..\..\..\Microsoft SDKs\Windows\v6.0A\bin\rc.exe" /r "$(ProjectDir)dsiPAXControl.rc") ELSE (IF EXIST "$(DevEnvDir)..\..\SDK\v2.0\Bin\rc.exe" ("$(DevEnvDir)..\..\SDK\v2.0\Bin\rc.exe" /r "$(ProjectDir)dsiPAXControl.rc") ELSE (IF EXIST "$(DevEnvDir)..\Tools\Bin\rc.exe" ("$(DevEnvDir)..\Tools\Bin\rc.exe" /r "$(ProjectDir)dsiPAXControl.rc") ELSE (IF EXIST "$(DevEnvDir)..\..\VC\Bin\rc.exe" ("$(DevEnvDir)..\..\VC\Bin\rc.exe" /r "$(ProjectDir)dsiPAXControl.rc") ELSE (IF EXIST "C:\Program Files (x86)\microsoft sdks\windows\v6.0A\bin\rc.exe" ("c:\Program Files (x86)\microsoft sdks\windows\v6.0A\bin\rc.exe" /r "$(ProjectDir)dsiPAXControl.rc") ELSE (IF EXIST "C:\Program Files\microsoft sdks\windows\v6.0A\bin\rc.exe" ("c:\Program Files\microsoft sdks\windows\v6.0A\bin\rc.exe" /r "$(ProjectDir)dsiPAXControl.rc") ELSE (@Echo Unable to find rc.exe, using default manifest instead))))))
+@echo.</PreBuildEvent>
+  </PropertyGroup>
+</Project>

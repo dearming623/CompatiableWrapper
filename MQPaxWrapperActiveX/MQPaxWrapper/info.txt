@@ -1,0 +1,133 @@
+﻿MQPaxWrapper v1.20
+1. 调整大量代码，代码搬迁到另外一个类中处理
+2. 增加poslink处于null状态异常处理
+3. 代码调整为单例实现，保证poslink为单一个对象
+4. 最后引用poslink.dll 版本为 v1.12.00_20231031
+
+MQPaxWrapper v1.19
+1. 重新引用poslink.dll 版本为 v1.10.01_20220512
+2. 修复一些已知的bug
+
+MQPaxWrapper v1.18
+1. 增加 QueryDetailReport方法查询报表
+2. 增加 ResponseData接收返回数据内容(内容为XML格式)
+
+MQPaxWrapper v1.17
+1. 重新引用poslink.dll 版本为 v1.10.00_20220113
+
+MQPaxWrapper v1.16
+1. INIT函数中调用PAX ManageRequest Command INIT
+2. 增加SerialNumber属性输出
+3. 增加GetVar的函数
+4. 调整合并Event函数(其他Event已经移除,现在版本只剩下一个)
+5. 移除respInputText属性
+
+MQPaxWrapper v1.15
+1. 重新引用poslink.dll 版本为 V1.09.00_20210628
+2. Init方法不再设置hostRspTimeout参数
+
+MQPaxWrapper v1.14
+1. 重新引用poslink.dll 版本为 v1.07.00.20201117
+2. 安装程序增加 msvcm90.dll,msvcp90.dll,msvcr90.dll部署
+3. RemoveCard方法从REMOVECARD调整为CARDINSERTDETECTION
+4. 修复readcard方法异常
+5. 增加ConvertPNG2JPG方法
+6. 强化ProcessTrans传参和返回参数
+
+MQPaxWrapper v1.13
+1.重新引用poslink.dll 版本为 v1.06.00.20200804
+2.修复RequestInputText报错的问题 
+3.增加CancelTrans方法
+
+MQPaxWrapper v1.12
+1. 重新引用poslink.dll 版本为 v1.02.00.20190619
+2. 安装程序增加 msvcm90.dll,msvcp90.dll,msvcr90.dll部署
+
+MQPaxWrapper v1.11
+1. 增加RequestInputText的方法
+方法中的变量为
+传入参数Title使用一下其中一串字符
+Enter Amount
+Enter Points
+Enter Table Number
+Enter the Number of Guests
+Enter Order Number
+Enter Ticket Number
+Enter Voucher Number
+Enter Auth Code
+Enter Tip
+Enter Cash Back
+Enter Merchant Fee
+Enter Surcharge Fee
+Enter Your Address
+Enter Your Zip Code
+Enter Customer Code
+Enter P.O. Number
+Enter Destination Zip
+Enter Product Description
+Enter Merchant Tax ID
+Enter TAX Amount
+Enter TAX Exempt ID
+Enter Reference Number
+Enter Phone Number
+Enter User NameY
+Enter Customer Service Phone
+Enter Original Trans. Date
+Enter Original Trans. Time
+Enter Date
+Enter Time
+Enter Amount
+Enter Password
+
+传入参数Input type. 使用一下其中一个数字
+0 = Alpha-Numeric string.
+1 = Numeric string.
+2 = Date in MMDDYYYY format.
+3 = Time in HHMMSS format.
+4 = Currency in XXXXX.XX format
+5 = Password format
+6 = US Phone format
+7 = US Social security number format
+Default = 0.
+
+
+MQPaxWrapper v1.10
+1. 增加Reset方法(Resets the terminal screen to the idle state.)
+
+MQPaxWrapper v1.09
+1. 重新引用poslink.dll 版本为 v1.01.04.20171120
+2. 安装程序增加 libeay32.dll,msvcm90.dll,msvcp90.dll,msvcr120.dll,msvcr90.dll,ssleay32.dll部署
+3. 修正一些文字说明
+
+MQPaxWrapper v1.08
+1. 重新引用poslink.dll 版本为 V1.01.03_20170406
+2. 增加ReadCard方法
+
+MQPaxWrapper v1.07
+1. 修改GetSignature方法的timeout时间以 0.1s 为单位计算
+2. 针对GetSignature进行log输出
+
+MQPaxWrapper v1.06
+1. 修改一下方法加入timeout作为入口参数
+ProcessTrans(string TenderType, string TransType, string Amount, string ECRefNum, string ExtData, string CashbackAmt,int timeout);
+GetSignature(int upload,string sigSavePath,string picName,int timeout);
+DoSignature(int upload, int timeout);
+RemoveCard(int timeout);
+2. Init(string CommType, int timeout, string DestIP, string DestPort);中的timeout由string类型改变为int,以秒为单位
+3. Init function支持UART和TCP进行连接( UART - 通过USB连接终端 )
+
+MQPaxWrapper v1.05
+1. 增加 EnableLog 方法,用于开启或关闭Poslink输出的log
+
+MQPaxWrapper v1.04
+1. 使用poslink.dll v1.01.03_20170406进行编译
+
+MQPaxWrapper v1.03
+1. 增加 remove card 方法
+
+MQPaxWrapper v1.02
+1. 增加 Do Signature 方法
+
+MQPaxWrapper v1.01
+1. 实现与poslink方法调用。
+

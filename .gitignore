@@ -1,0 +1,49 @@
+## 编译输出 ##
+bin/
+obj/
+out/
+
+## 用户配置 ##
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+## VS Code 配置 ##
+.vscode/
+
+## NuGet 包 ##
+*.nupkg
+*.snupkg
+packages/
+*.nuspec
+
+## 发布文件 ##
+publish/
+*.Publish.xml
+
+## 日志和临时文件 ##
+*.log
+*.tmp
+*.bak
+
+## ASP.NET 临时文件 ##
+App_Data/
+App_Start/
+Generated_Code/
+
+## Rider 和 JetBrains IDE ##
+.idea/
+*.sln.iml
+
+## 环境配置 ##
+.env
+
+## 其他 ##
+*.DS_Store
+Thumbs.db
+
+
+TestDll/
+PLUAITester/
+MQPaxWrapperActiveX_bak_v119/
